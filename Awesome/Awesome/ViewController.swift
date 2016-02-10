@@ -11,9 +11,12 @@ import Gloss
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var awesomeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        awesomeLabel.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +24,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func switchToggled(sender: AnyObject) {
+        
+        let toggleSwitch = sender as! UISwitch
+        print(awesomeLabel.hidden)
+        awesomeLabel.hidden = !toggleSwitch.on
+        
+    }
 
 }
 
